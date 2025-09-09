@@ -1,6 +1,0 @@
-/root/zerobus/build/CMakeFiles/publisher.dir
-/root/zerobus/build/CMakeFiles/consumer.dir
-/root/zerobus/build/CMakeFiles/unit_tests.dir
-/root/zerobus/build/CMakeFiles/test.dir
-/root/zerobus/build/CMakeFiles/edit_cache.dir
-/root/zerobus/build/CMakeFiles/rebuild_cache.dir

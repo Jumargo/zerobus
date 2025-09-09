@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/consumer.dir/src/consumer/main.cpp.o -o consumer  -lzmq 
