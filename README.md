@@ -15,11 +15,12 @@ Implementar un bus de mensajes ligero que permita:
 ```
 zerobus/
 ├─ src/
-│  ├─ publisher/   → Publica mensajes periódicos (ZeroMQ PUB)
-│  ├─ consumer/    → Se suscribe a mensajes (ZeroMQ SUB)
-│  └─ common/      → Código compartido (logging, utils)
-├─ tests/          → Unit tests (GoogleTest)
-├─ build/          → Directorio de compilación (CMake)
+│  ├─ publisher/       → Publica mensajes periódicos (ZeroMQ PUB)
+│  ├─ consumer/        → Se suscribe a mensajes (ZeroMQ SUB)
+│  ├─ common/          → Código compartido (logging, utils)
+│  └─ exercises/       → Ejercicios de Bloque 1 (threading, IPC, sockets)
+├─ tests/              → Unit tests (GoogleTest)
+├─ build/              → Directorio de compilación (CMake)
 └─ README.md
 ```
 
@@ -67,4 +68,37 @@ Compilar y ejecutar:
 cd build
 make unit_tests
 ctest --output-on-failure
+```
+
+## 🧩 Ejercicios Bloque 1 (Fundamentos Linux + C/C++)
+
+Este bloque incluye ejemplos de concurrencia e IPC en Linux, desarrollados como práctica antes de usar ZeroMQ:
+
+- **Multithreading con `std::thread` + `std::mutex`**  
+  Ejecutable: `thread_counter`  
+  Tres hilos incrementan un contador compartido de forma segura.
+
+- **Comunicación padre ↔ hijo con `fork()` y `pipe()`**  
+  Ejecutable: `pipe_parent_child`  
+  El proceso padre envía mensajes, el hijo responde en mayúsculas.
+
+- **Sockets locales (AF_UNIX)**  
+  - `unix_echo_server`: servidor que responde en mayúsculas.  
+  - `unix_echo_client`: cliente que se conecta al servidor y recibe la respuesta.  
+
+### Ejemplo de uso (socket UNIX)
+
+En una terminal:
+```bash
+./unix_echo_server /tmp/zerobus_echo.sock
+```
+
+En otra terminal:
+```bash
+./unix_echo_client /tmp/zerobus_echo.sock $'hola\n'
+```
+
+**Salida esperada:**
+```
+[client] recv: HOLA
 ```
