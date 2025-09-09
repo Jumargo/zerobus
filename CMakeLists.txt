@@ -15,3 +15,8 @@ target_link_libraries(publisher ${ZMQ_LIBRARIES})
 
 add_executable(consumer src/consumer/main.cpp)
 target_link_libraries(consumer ${ZMQ_LIBRARIES})
+
+enable_testing()
+add_executable(unit_tests tests/test_main.cpp)
+target_link_libraries(unit_tests ${ZMQ_LIBRARIES} gtest pthread)
+add_test(NAME unit_tests COMMAND unit_tests)
