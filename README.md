@@ -1,5 +1,7 @@
 # ZeroBus
 
+[![CI](https://github.com/Jumargo/zerobus/actions/workflows/ci.yml/badge.svg)](https://github.com/Jumargo/zerobus/actions/workflows/ci.yml)
+
 Proyecto de práctica en **C/C++ sobre Linux (Rock Pi 4)** para aprender conceptos de **sistemas distribuidos** y **comunicación con ZeroMQ**.
 
 ## 🚀 Objetivo
